@@ -102,6 +102,8 @@ const calculators = [
 ];
 
 const navLinks = [
+  { name: "IPO Eligibility", href: "/ipo-eligibility-checker" },
+  { name: "IPO Guide", href: "/ipo-process-in-india" },
   { name: "Blog", href: "/blog" },
 ];
 

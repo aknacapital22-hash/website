@@ -34,6 +34,8 @@ export function Footer() {
                 { label: "About Us", href: "/about" },
                 { label: "Career", href: "/about#team" },
                 { label: "Blog", href: "/blog" },
+                { label: "IPO Eligibility Checker", href: "/ipo-eligibility-checker" },
+                { label: "IPO Process Guide", href: "/ipo-process-in-india" },
                 { label: "Contact Us", href: "/contact" },
               ].map((item) => (
                 <li key={item.href}>

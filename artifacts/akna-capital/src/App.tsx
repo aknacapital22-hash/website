@@ -33,6 +33,8 @@ const LoanEmiCalculator = lazy(() => import("@/pages/market-tools/LoanEmiCalcula
 const SipStepUpCalculator = lazy(() => import("@/pages/market-tools/SipStepUpCalculator"));
 const LumpsumSipCalculator = lazy(() => import("@/pages/market-tools/LumpsumSipCalculator"));
 const BusinessValuationEstimator = lazy(() => import("@/pages/market-tools/BusinessValuationEstimator"));
+const IpoEligibilityChecker = lazy(() => import("@/pages/IpoEligibilityChecker"));
+const IpoProcessGuide = lazy(() => import("@/pages/IpoProcessGuide"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 const queryClient = new QueryClient({
@@ -70,6 +72,8 @@ function Router() {
         <Route path="/market-tools/sip-step-up-calculator" component={SipStepUpCalculator} />
         <Route path="/market-tools/lumpsum-sip-calculator" component={LumpsumSipCalculator} />
         <Route path="/market-tools/business-valuation-estimator" component={BusinessValuationEstimator} />
+        <Route path="/ipo-eligibility-checker" component={IpoEligibilityChecker} />
+        <Route path="/ipo-process-in-india" component={IpoProcessGuide} />
         <Route path="/about" component={AboutPage} />
         <Route path="/contact" component={ContactPage} />
         <Route path="/blog" component={BlogPage} />

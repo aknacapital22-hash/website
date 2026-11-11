@@ -25,6 +25,249 @@ const DESK: BlogAuthor = { name: "AKNA Capital Research Desk", title: "AKNA Capi
 // Ordered newest first — blogPosts[0] is the featured article on /blog.
 export const blogPosts: BlogPost[] = [
   {
+    slug: "sme-ipo-eligibility-criteria-india",
+    title: "SME IPO Eligibility Criteria in India: What Your Company Needs to Qualify",
+    metaTitle: "SME IPO Eligibility Criteria in India (BSE SME, NSE Emerge) | AKNA Capital",
+    metaDescription:
+      "What does a company need to list on BSE SME or NSE Emerge? A plain-English look at track record, net worth, profitability, capital limits and governance, plus how to check where you stand.",
+    excerpt: "Eligibility is the first question every promoter asks. Here is what SME platforms look at, where companies most often fall short, and how to check yourself before you spend on advisors.",
+    category: "IPO Advisory",
+    readTime: "6 min read",
+    date: "November 11, 2026",
+    isoDate: "2026-11-11",
+    author: DESK,
+    content: `
+## Start With the Honest Question: Can We List Today?
+
+Most promoters ask about valuation first. The better first question is whether the company clears the eligibility bar at all, because every month spent on a plan that cannot be filed is a month lost. SME platforms, BSE SME and NSE Emerge, are built for smaller growing companies, so their bar is lower than the Main-Board's, but it is not low.
+
+## What SME Platforms Typically Look At
+
+- **Operating track record.** A multi-year history, commonly three years, in the business you are asking investors to fund.
+- **Net worth.** Positive and growing net worth, with exchange-specific minimums that are revised from time to time.
+- **Profitability.** A recent record of operating profit or positive cash generation, usually tested over the last few years rather than one good year.
+- **Size of the issue.** SME platforms apply a ceiling on post-issue paid-up capital, so very large issues are pushed toward the Main-Board.
+- **Governance.** Independent directors, an audit committee where required, clean statutory filings, and disclosed related-party dealings.
+- **A SEBI registered merchant banker.** Mandatory on every issue, whatever the platform.
+
+Exact thresholds are set by SEBI's ICDR Regulations and by each exchange, and they have been amended more than once. Always confirm the current numbers with your merchant banker before relying on any blog, including this one.
+
+## Where Companies Most Often Fall Short
+
+1. **Messy cap table.** Unrecorded share transfers, unclear promoter holdings, or old issuances without proper filings.
+2. **Related-party transactions.** Heavy dealings with promoter-linked entities, poorly documented or priced off-market.
+3. **Profit that disappears on restatement.** Management accounts show profit, but restated audited numbers do not.
+4. **Customer or supplier concentration.** One buyer or one vendor accounting for most of the business is a disclosure and valuation issue.
+5. **Compliance history.** Late tax, ROC or GST filings that surface during due diligence.
+
+## Check Where You Stand
+
+Our [IPO Eligibility Checker](/ipo-eligibility-checker) gives you an indicative read in about a minute. If it flags gaps, they are usually fixable with 12 to 24 months of structured preparation, which is what [Pre-IPO Advisory](/services/pre-ipo-advisory) covers. If you already clear the bar, [IPO and SME IPO Advisory](/services/ipo-and-sme-ipo-advisory) takes you from merchant banker selection through to listing.
+
+For a side-by-side of the two listing routes, read [SME IPO vs Main-Board IPO](/blog/sme-ipo-vs-main-board-ipo-which-fits).
+
+AKNA Capital is not a SEBI registered merchant banker and does not replace one. This article is general information, not legal advice.
+`,
+  },
+  {
+    slug: "ipo-process-in-india-step-by-step-for-promoters",
+    title: "IPO Process in India, Step by Step: A Promoter's Roadmap",
+    metaTitle: "IPO Process in India: Step-by-Step Roadmap for Promoters | AKNA Capital",
+    metaDescription:
+      "From the first board discussion to listing day: the real sequence of an Indian IPO, who does what, where timelines slip, and what promoters should prepare early.",
+    excerpt: "An IPO is a sequence of dependencies, not a single event. Here is the order things actually happen in, and where promoters lose the most time.",
+    category: "IPO Advisory",
+    readTime: "7 min read",
+    date: "November 10, 2026",
+    isoDate: "2026-11-10",
+    author: DESK,
+    content: `
+## An IPO Is a Project, Not an Event
+
+Listing day is the visible moment. Most of the work happens in the twelve months before it. Understanding the order of steps lets a promoter plan the business around the process rather than being surprised by it.
+
+## The Sequence in Brief
+
+1. **Readiness review and route selection.** Test financials, governance and cap table, and choose between an SME IPO and a Main-Board IPO.
+2. **Clean-up and restatement.** Fix share capital records, related-party dealings and compliance gaps. Auditors restate financials for the disclosure period.
+3. **Appoint intermediaries.** A SEBI registered merchant banker, legal counsel, registrar, auditors and others.
+4. **Approvals.** Board and shareholder resolutions, conversion to a public company where required, and updated constitutional documents.
+5. **Due diligence and DRHP.** The Draft Red Herring Prospectus is drafted and verified.
+6. **Regulatory review.** SEBI or the exchange raises observations; each response round takes time.
+7. **Marketing and pricing.** Roadshows, anchor investors, the RHP and the price band.
+8. **Issue, allotment and listing.** The issue opens, allotment follows, and shares list.
+
+## Where Time Is Usually Lost
+
+- **Late discovery of gaps.** Governance or track-record issues found after the DRHP is drafted force rework.
+- **Slow query responses.** Regulatory observations are the single biggest timeline risk, and slow or incomplete answers add whole cycles.
+- **Auditor bandwidth.** Restated financials depend on a few people who also have a year-end to close.
+- **Promoter distraction.** If the founder runs the listing and the business at once, one of them suffers.
+
+## What Promoters Control
+
+You cannot control SEBI's calendar, but you can control readiness. Companies that start governance and financial clean-up a year or more before filing consistently have a smoother review. That is the premise of [Pre-IPO Advisory](/services/pre-ipo-advisory).
+
+## Where an Issuer-Side Advisor Fits
+
+A merchant banker works for the issue and carries regulatory responsibility. An issuer-side advisor works for you: selecting and negotiating with the merchant banker, coordinating counsel and auditors, and keeping every counterparty on the timeline. That is what [IPO and SME IPO Advisory](/services/ipo-and-sme-ipo-advisory) delivers.
+
+See the full walkthrough with timeline, documents and FAQs in our [IPO process guide](/ipo-process-in-india), or test readiness with the [IPO Eligibility Checker](/ipo-eligibility-checker).
+
+AKNA Capital is not a SEBI registered merchant banker. Timelines vary by company and are not guaranteed.
+`,
+  },
+  {
+    slug: "documents-required-for-ipo-in-india",
+    title: "Documents Required for an IPO in India: A Promoter's Checklist",
+    metaTitle: "Documents Required for IPO in India: Checklist | AKNA Capital",
+    metaDescription:
+      "The documents a company should start collecting before an SME or Main-Board IPO: corporate records, restated financials, approvals, contracts, licences and compliance records.",
+    excerpt: "Document gaps are one of the quietest causes of IPO delays. Start with this checklist a year before you plan to file.",
+    category: "IPO Advisory",
+    readTime: "5 min read",
+    date: "November 9, 2026",
+    isoDate: "2026-11-09",
+    author: DESK,
+    content: `
+## Why a Checklist Matters
+
+Your merchant banker and legal counsel will issue a long due diligence request list. The faster you can answer it, the shorter the process. Companies that begin gathering documents early save weeks, sometimes months.
+
+## Corporate Records
+
+- Certificate of incorporation and any name-change certificates
+- Memorandum and Articles of Association, with every amendment
+- Statutory registers: members, directors, charges, share transfers
+- ROC filings, annual returns and board and shareholder meeting minutes
+- Complete share capital history: every allotment, transfer and buyback
+
+## Financial Records
+
+- Audited financial statements for the disclosure period
+- Restated financials prepared by the auditor
+- Tax returns and assessment orders, GST and other indirect tax filings
+- Details of borrowings, charges and sanction letters
+- Related-party transaction records and the basis of pricing
+
+## Business and Operations
+
+- Material customer and supplier contracts
+- Licences, registrations, approvals and certifications
+- Property documents, leases and ownership proofs
+- Intellectual property registrations
+- Employee data, key managerial personnel agreements and ESOP records
+
+## Promoters, Directors and Governance
+
+- KYC and background details of promoters, directors and key managerial personnel
+- Disclosure of group and promoter-linked entities
+- Declarations on litigation, defaults and regulatory actions
+- Board committee composition and independent director appointments
+
+## Litigation and Compliance
+
+- Pending and past litigation, civil, criminal, tax and regulatory
+- Notices from authorities and the status of each
+- Environmental, labour and sector-specific compliance records
+
+## A Practical Tip
+
+Build a single data room, organised under these headings, and assign one person to own it. Gaps become visible immediately. If the list turns up more problems than you expected, that is a signal to begin with [Pre-IPO Advisory](/services/pre-ipo-advisory), and the [IPO Eligibility Checker](/ipo-eligibility-checker) can tell you whether the numbers qualify.
+
+Requirements vary by issue and are finalised by your merchant banker and legal counsel. This is general information, not legal advice.
+`,
+  },
+  {
+    slug: "how-much-does-an-ipo-cost-in-india",
+    title: "How Much Does an IPO Cost in India? What Promoters Should Budget For",
+    metaTitle: "IPO Cost in India: What Promoters Should Budget For | AKNA Capital",
+    metaDescription:
+      "The cost heads of an Indian IPO: merchant banker, legal, audit, registrar, exchange and regulatory fees, marketing, and the hidden cost of management time.",
+    excerpt: "There is no standard IPO price list. But there is a standard list of cost heads, and knowing it lets you compare quotes properly.",
+    category: "IPO Advisory",
+    readTime: "5 min read",
+    date: "November 8, 2026",
+    isoDate: "2026-11-08",
+    author: DESK,
+    content: `
+## Why There Is No Single Number
+
+IPO costs depend on the platform, the size of the issue, the complexity of the business and the intermediaries you pick. Anyone quoting one flat number without knowing those is guessing. What you can do is understand the cost heads and ask for itemised quotes.
+
+## The Main Cost Heads
+
+- **Merchant banker (lead manager) fees.** Often the largest line, usually structured as a mix of fixed and issue-linked components. Compare structure, not just headline.
+- **Legal counsel.** Due diligence, DRHP drafting support and compliance opinions.
+- **Statutory and peer-review auditors.** Restatement of financials and related certifications.
+- **Registrar to the issue.** Processing applications, allotment and refunds.
+- **Exchange and regulatory fees.** Filing and listing fees charged by SEBI and the exchange.
+- **Underwriting and market-maker arrangements.** Particularly relevant on SME platforms.
+- **Marketing and roadshows.** Printing, advertising, investor events and travel.
+- **Other intermediaries.** Bankers to the issue, depositories, monitoring agency where required.
+
+## The Cost People Forget
+
+Management time. A promoter team distracted for twelve months can cost more in missed business than any single fee. Budget for it by giving the listing a dedicated owner, so the CEO stays on the business.
+
+## How to Compare Quotes
+
+1. Ask each merchant banker for an itemised, written proposal.
+2. Separate fixed fees from success-linked fees.
+3. Check what is included: DRHP drafting support, marketing, post-listing support.
+4. Ask about recent comparable issues and how they performed after listing.
+5. Check what happens to fees if the issue is delayed or withdrawn.
+
+An issuer-side advisor can run this comparison for you in a structured RFP, which is part of [IPO and SME IPO Advisory](/services/ipo-and-sme-ipo-advisory). If you are still deciding between routes, see [SME IPO vs Main-Board IPO](/blog/sme-ipo-vs-main-board-ipo-which-fits), then use the [Business Valuation Estimator](/market-tools/business-valuation-estimator) for a rough sense of equity value.
+
+This article is general information. Fees are negotiated case by case; none are quoted here.
+`,
+  },
+  {
+    slug: "do-promoters-lose-control-after-ipo",
+    title: "Do Promoters Lose Control After an IPO? What Actually Changes",
+    metaTitle: "Do Promoters Lose Control After an IPO in India? | AKNA Capital",
+    metaDescription:
+      "An IPO sells a minority stake to public investors without board seats or vetoes. Here is what promoters keep, what changes, and what lock-in and disclosure duties apply.",
+    excerpt: "The fear of losing control keeps good companies from listing. The reality is more nuanced: control mostly stays, but accountability goes up.",
+    category: "IPO Advisory",
+    readTime: "5 min read",
+    date: "November 7, 2026",
+    isoDate: "2026-11-07",
+    author: DESK,
+    content: `
+## The Common Fear
+
+Many promoters equate raising outside money with handing over the steering wheel. That is a fair worry with private equity, where investors often negotiate board seats, vetoes and exit rights. A public issue works differently.
+
+## What You Keep
+
+- **Majority ownership.** Most IPOs sell a minority stake. Promoters continue to hold the majority.
+- **Board control.** Public shareholders do not get nominee directors or special veto rights.
+- **Strategic direction.** Management continues to run the business and set strategy.
+
+## What Changes
+
+- **Disclosure.** Quarterly results, material event disclosures and related-party reporting become mandatory.
+- **Governance.** Independent directors, board committees and stricter approval processes for related-party transactions.
+- **Lock-in.** A minimum portion of promoter holding is locked in for a period after listing, under SEBI's rules, which have been amended over time.
+- **Market scrutiny.** Analysts, investors and the media will read every result. Share price becomes a visible scorecard.
+- **Dilution is permanent.** Shares sold in the IPO do not come back without a buyback or open-market purchase.
+
+## When Control Genuinely Is at Risk
+
+Control can erode if promoters sell too much too fast, if later fundraising dilutes them further, or if the company becomes a takeover target at a low valuation. These are managed through planning: issue size, the split between fresh issue and offer for sale, and a post-listing capital plan.
+
+## Is an IPO Right Versus Alternatives?
+
+That depends on your goals. If you want growth capital and liquidity while keeping control, a listing can fit well. If you want a full exit, a [sell-side M&A process](/services/sell-side-ma-advisory) may be better. Our [IPO and SME IPO Advisory](/services/ipo-and-sme-ipo-advisory) team starts every engagement with that question.
+
+Thinking about it? Run the [IPO Eligibility Checker](/ipo-eligibility-checker) or read the [IPO process guide](/ipo-process-in-india).
+
+This is general information, not legal advice. Lock-in and shareholding rules are set by SEBI and may change.
+`,
+  },
+  {
     slug: "when-is-the-right-time-to-sell-your-business",
     title: "When Is the Right Time to Sell Your Business? Five Signs to Watch",
     metaTitle: "When Should You Sell Your Business? 5 Signs to Watch | AKNA Capital",

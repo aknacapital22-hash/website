@@ -50,6 +50,11 @@ Corporate advisory services for promoters, business owners, and CFOs, distinct f
 
 10. **Sell-side M&A Advisory**: Sale readiness, valuation benchmarking, confidential buyer outreach, and process management for promoters selling a business. https://aknacapital.com/services/sell-side-ma-advisory
 
+## IPO Resources
+
+- IPO Eligibility Checker (SME and Main-Board, indicative): https://aknacapital.com/ipo-eligibility-checker
+- IPO Process in India (steps, timeline, documents, FAQs): https://aknacapital.com/ipo-process-in-india
+
 ## Free Calculators
 
 Available at https://aknacapital.com/market-tools
