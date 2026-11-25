@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 
 export const FIFTEEN_STOCKS_URL = "https://15stocks.aknacapital.com";
 
+/** Outbound link with UTM tags so 15Stocks analytics show which AKNA placement sent the visitor. */
+export const stocksLink = (placement: string) =>
+  `${FIFTEEN_STOCKS_URL}/?utm_source=aknacapital.com&utm_medium=referral&utm_campaign=${placement}`;
+
 const steps = [
   { n: "1", title: "Pick", body: "A strategy that fits your risk." },
   { n: "2", title: "Model decides", body: "Fixed rules propose the trades." },
@@ -46,7 +50,7 @@ export function FifteenStocksSpotlight() {
                   Explore 15Stocks <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
               </Link>
-              <a href={FIFTEEN_STOCKS_URL} target="_blank" rel="noopener noreferrer">
+              <a href={stocksLink("home_spotlight")} target="_blank" rel="noopener">
                 <Button size="lg" variant="outline" className="h-14 px-8 rounded-full text-base">
                   Find my strategy
                 </Button>

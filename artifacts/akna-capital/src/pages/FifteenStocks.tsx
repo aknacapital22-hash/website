@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
-import { FIFTEEN_STOCKS_URL } from "@/components/sections/FifteenStocksSpotlight";
+import { FIFTEEN_STOCKS_URL, stocksLink } from "@/components/sections/FifteenStocksSpotlight";
 
 const steps = [
   { title: "Pick a strategy", body: "Choose from 15 index strategies across momentum, multi asset, hybrid and thematic baskets. Each one shows its deepest falls and rolling returns next to the headline number." },
@@ -87,13 +87,22 @@ export default function FifteenStocks() {
                 no fee on your trades, and the platform never holds your money or shares.
               </p>
               <div className="flex flex-wrap gap-3 mt-6">
-                <a href={FIFTEEN_STOCKS_URL} target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="rounded-full h-12 px-7">Open 15Stocks <ArrowRight className="w-4 h-4 ml-1" /></Button>
+                <a href={stocksLink("15stocks_hero")} target="_blank" rel="noopener">
+                  <Button size="lg" className="rounded-full h-12 px-7">Find my strategy, free <ArrowRight className="w-4 h-4 ml-1" /></Button>
                 </a>
                 <Link href="/contact">
                   <Button size="lg" variant="outline" className="rounded-full h-12 px-7">Ask our team</Button>
                 </Link>
               </div>
+              <p className="mt-4 text-sm text-muted-foreground">Free to explore · No account needed · Leave any time</p>
+              <ul className="mt-6 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
+                {[["15", "index strategies"], ["₹0", "held by the platform"], ["100%", "trades approved by you"], ["0", "lock-in"]].map(([n, l]) => (
+                  <li key={l} className="rounded-2xl border border-border bg-card/80 px-4 py-3">
+                    <p className="text-2xl font-extrabold text-primary tabular-nums">{n}</p>
+                    <p className="text-xs text-muted-foreground">{l}</p>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           </div>
         </section>
@@ -123,6 +132,40 @@ export default function FifteenStocks() {
                     <p className="text-sm text-muted-foreground mt-1.5 leading-snug">{t.body}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="rounded-3xl border border-primary/30 bg-primary/5 p-7">
+                <h2 className="text-xl md:text-2xl font-bold">15Stocks is for you if</h2>
+                <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+                  {["You want a rule-based process, not tips or gut calls", "You want to keep shares in your own demat and approve every trade", "You like knowing the worst fall before you invest", "You want a flat, predictable price, not a cut of your profits"].map((t) => (
+                    <li key={t} className="flex gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{t}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-3xl border border-border bg-card p-7">
+                <h2 className="text-xl md:text-2xl font-bold">It is not for you if</h2>
+                <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+                  {["You want guaranteed returns. No honest product can offer them", "You want someone to run your portfolio without your approval", "You need your money back within a few months, as equity can fall sharply", "You want stock tips to trade intraday"].map((t) => (
+                    <li key={t} className="flex gap-2"><span className="mt-0.5 shrink-0 text-muted-foreground">✕</span>{t}</li>
+                  ))}
+                </ul>
+                <p className="mt-4 text-xs text-muted-foreground">Not sure? Our team can help you decide on a free call.</p>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-border bg-card p-7 md:p-9">
+              <h2 className="text-2xl md:text-3xl font-bold">One flat price. No cut of your profits.</h2>
+              <p className="mt-3 text-muted-foreground">
+                On a ₹25 lakh portfolio, a 2% PMS management fee alone is ₹50,000 a year, before any profit share. 15Stocks charges a flat
+                subscription per basket, so the cost does not grow as your money does. Brokerage and statutory charges are separate and charged by your broker.
+              </p>
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <a href={stocksLink("15stocks_pricing")} target="_blank" rel="noopener">
+                  <Button className="rounded-full">See current pricing <ArrowRight className="ml-1 h-4 w-4" /></Button>
+                </a>
+                <Link href="/contact"><Button variant="outline" className="rounded-full">Talk to a human first</Button></Link>
               </div>
             </div>
 
@@ -162,7 +205,7 @@ export default function FifteenStocks() {
             <div className="rounded-3xl bg-primary text-primary-foreground p-8 md:p-10 text-center">
               <h2 className="text-2xl md:text-3xl font-bold">Find the strategy that fits you</h2>
               <p className="opacity-90 mt-2 mb-6">Answer three questions on 15Stocks. No account needed.</p>
-              <a href={FIFTEEN_STOCKS_URL} target="_blank" rel="noopener noreferrer">
+              <a href={stocksLink("15stocks_footer_cta")} target="_blank" rel="noopener">
                 <Button size="lg" variant="secondary" className="rounded-full h-12 px-7">Unlock my strategy <ArrowRight className="w-4 h-4 ml-1" /></Button>
               </a>
             </div>
@@ -175,6 +218,11 @@ export default function FifteenStocks() {
           </div>
         </section>
       </main>
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 p-3 backdrop-blur md:hidden">
+        <a href={stocksLink("15stocks_sticky")} target="_blank" rel="noopener" className="block">
+          <Button className="h-12 w-full rounded-full font-semibold">Find my strategy, free <ArrowRight className="ml-1 h-4 w-4" /></Button>
+        </a>
+      </div>
       <Footer />
     </div>
   );
