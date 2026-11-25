@@ -49,7 +49,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 z-20 transition-opacity duration-300"
         style={{
           opacity: spotlight.active ? 1 : 0,
-          background: `radial-gradient(700px circle at ${spotlight.x}px ${spotlight.y}px, rgba(200,146,42,0.118), transparent 70%)`,
+          background: `radial-gradient(700px circle at ${spotlight.x}px ${spotlight.y}px, rgba(20,184,166,0.12), transparent 70%)`,
         }}
       />
 

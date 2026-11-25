@@ -14,7 +14,7 @@ interface CalculatorResultProps {
   chartLabels?: [string, string];
 }
 
-const COLORS = ["hsl(38 72% 50%)", "hsl(220 10% 30%)"];
+const COLORS = ["hsl(175 77% 26%)", "hsl(220 10% 30%)"];
 
 export function CalculatorResult({ stats, invested, returns, chartLabels = ["Invested", "Returns"] }: CalculatorResultProps) {
   const showChart = typeof invested === "number" && typeof returns === "number" && invested + returns > 0;
