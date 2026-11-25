@@ -44,6 +44,11 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/15stocks" className="text-background/70 hover:text-primary transition-colors text-sm">
+                  15Stocks Platform
+                </Link>
+              </li>
             </ul>
           </div>
 

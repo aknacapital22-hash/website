@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
 import { FeaturedSections } from "@/components/sections/FeaturedSections";
 import { IpoSpotlight } from "@/components/sections/IpoSpotlight";
+import { FifteenStocksSpotlight } from "@/components/sections/FifteenStocksSpotlight";
 import { Contact } from "@/components/sections/Contact";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ, faqs } from "@/components/sections/FAQ";
@@ -114,7 +115,7 @@ export default function Home() {
         title="AKNA Capital | IPO Advisory, SME IPO Consultant & Wealth Advisory, Mumbai"
         description="IPO and SME IPO consultant in Mumbai for promoters and CFOs: Pre-IPO readiness, BSE SME, NSE Emerge and Main-Board IPO advisory, M&A advisory. Plus SEBI Registered Research Analyst (INH000023515) wealth advisory."
         path="/"
-        keywords="IPO consultant India, SME IPO consultant, IPO advisory Mumbai, pre-IPO advisory, NSE Emerge IPO, BSE SME IPO, IPO eligibility, wealth advisory, investment advisory India, SEBI registered research analyst, equity research, stock recommendations, mutual fund investing, enhanced SIP, private wealth management, stockmarket workshop, algo trading India, term insurance, health insurance, portfolio management Mumbai"
+        keywords="15Stocks, systematic investing India, IPO consultant India, SME IPO consultant, IPO advisory Mumbai, pre-IPO advisory, NSE Emerge IPO, BSE SME IPO, IPO eligibility, wealth advisory, investment advisory India, SEBI registered research analyst, equity research, stock recommendations, mutual fund investing, enhanced SIP, private wealth management, stockmarket workshop, algo trading India, term insurance, health insurance, portfolio management Mumbai"
         jsonLd={homeSchemas}
       />
       <Navbar />
@@ -122,6 +123,7 @@ export default function Home() {
         <Hero />
         <Services />
         <IpoSpotlight />
+        <FifteenStocksSpotlight />
         <FeaturedSections />
         <Testimonials />
         <FAQ />

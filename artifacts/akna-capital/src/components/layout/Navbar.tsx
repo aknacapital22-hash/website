@@ -437,6 +437,13 @@ export function Navbar() {
             </Link>
           ))}
 
+          <Link
+            href="/15stocks"
+            className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors no-underline"
+          >
+            15Stocks
+          </Link>
+
           <Link href="/contact">
             <Button className="rounded-full px-6 bg-primary text-primary-foreground hover:bg-primary/90 hover:-translate-y-0.5 transition-all shadow-md hover:shadow-lg">
               Signup Today
@@ -620,6 +627,14 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
+
+              <Link
+                href="/15stocks"
+                className="text-lg font-semibold text-primary no-underline"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                15Stocks
+              </Link>
 
               <Link href="/contact">
                 <Button

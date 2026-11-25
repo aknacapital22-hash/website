@@ -55,6 +55,10 @@ Corporate advisory services for promoters, business owners, and CFOs, distinct f
 - IPO Eligibility Checker (SME and Main-Board, indicative): https://aknacapital.com/ipo-eligibility-checker
 - IPO Process in India (steps, timeline, documents, FAQs): https://aknacapital.com/ipo-process-in-india
 
+## 15Stocks (Systematic Investing Platform)
+
+- 15Stocks by AKNA Capital: 15 rule-based index strategies where the client approves every rebalance in their own demat; the platform never holds money or shares. Overview: https://aknacapital.com/15stocks . Platform: https://15stocks.aknacapital.com
+
 ## Free Calculators
 
 Available at https://aknacapital.com/market-tools
