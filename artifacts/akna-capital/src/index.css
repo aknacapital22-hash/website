@@ -240,6 +240,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: clamp(15px, 0.35vw + 14px, 17.5px);
+    scroll-padding-top: 5rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
   }
   * {
     @apply border-border;

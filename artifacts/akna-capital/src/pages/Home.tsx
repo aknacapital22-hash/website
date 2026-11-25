@@ -1,6 +1,10 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { PathFinder } from "@/components/sections/PathFinder";
+import { HowItWorks } from "@/components/sections/HowItWorks";
+import { DelayCost } from "@/components/sections/DelayCost";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { Services } from "@/components/sections/Services";
 import { FeaturedSections } from "@/components/sections/FeaturedSections";
 import { IpoSpotlight } from "@/components/sections/IpoSpotlight";
@@ -118,30 +122,42 @@ export default function Home() {
         keywords="15Stocks, systematic investing India, IPO consultant India, SME IPO consultant, IPO advisory Mumbai, pre-IPO advisory, NSE Emerge IPO, BSE SME IPO, IPO eligibility, wealth advisory, investment advisory India, SEBI registered research analyst, equity research, stock recommendations, mutual fund investing, enhanced SIP, private wealth management, stockmarket workshop, algo trading India, term insurance, health insurance, portfolio management Mumbai"
         jsonLd={homeSchemas}
       />
+      <ScrollProgress />
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        <Services />
-        <IpoSpotlight />
+        <PathFinder />
+        <HowItWorks />
         <FifteenStocksSpotlight />
+        <Services />
+        <DelayCost />
+        <IpoSpotlight />
         <FeaturedSections />
         <Testimonials />
         <FAQ />
 
-        {/* Final CTA strip */}
-        <section className="py-16 md:py-24 text-center bg-muted/30 border-y border-border/40">
-          <div className="max-w-2xl mx-auto px-4">
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 text-foreground">
-              Invest once with us and <span className="text-primary">Scale When You're Ready.</span>
+        {/* Final CTA: low-friction, risk-reversed */}
+        <section className="relative overflow-hidden bg-primary py-[clamp(3.5rem,8vw,6rem)] text-center text-primary-foreground">
+          <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-white/10 blur-[100px]" />
+          <div className="relative mx-auto max-w-2xl px-4">
+            <h2 className="text-[clamp(1.75rem,3.5vw+0.5rem,3rem)] font-bold tracking-tight">
+              Your first conversation is on us
             </h2>
-            <p className="text-muted-foreground text-lg mb-8">
-              Get started without limits. Increase investments at your own pace, only when your capital grows.
+            <p className="mt-3 text-lg opacity-90">
+              Tell us where you are and where you want to be. We will point you to the right next step, with no pressure and no obligation.
             </p>
-            <Link href="/contact">
-              <Button size="lg" className="h-14 px-10 text-lg rounded-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg">
-                Try Today
-              </Button>
-            </Link>
+            <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+              <Link href="/contact">
+                <Button size="lg" variant="secondary" className="h-14 w-full rounded-full px-10 text-base font-semibold sm:w-auto">
+                  Book a free consultation
+                </Button>
+              </Link>
+              <Link href="/market-tools">
+                <Button size="lg" variant="outline" className="h-14 w-full rounded-full border-white/40 bg-transparent px-8 text-base text-primary-foreground hover:bg-white/10 hover:text-primary-foreground sm:w-auto">
+                  Try free calculators first
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
 

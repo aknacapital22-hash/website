@@ -14,17 +14,11 @@ const testimonials = [
     text: "I highly recommend R&R if someone wants to get good stock recommendations with perfect research.",
     stars: 5,
   },
-  {
-    name: "Gaurav Jain",
-    role: "Business Owner",
-    text: "Their recommendations are the only ones I trust at this point, as they are well researched and so far, all the stocks they've recommended have given me returns.",
-    stars: 5,
-  },
 ];
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-14 md:py-24 bg-muted/30 border-y border-border/40 section-lazy">
+    <section id="testimonials" className="py-[clamp(3.5rem,8vw,6.5rem)] bg-muted/30 border-y border-border/40 section-lazy">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -41,7 +35,7 @@ export function Testimonials() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {testimonials.map((t, index) => (
             <motion.div
               key={index}
@@ -72,6 +66,9 @@ export function Testimonials() {
             </motion.div>
           ))}
         </div>
+        <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-muted-foreground">
+          Rated 4.6 from 1,000+ reviews. Client experiences are individual and are not a guarantee of future results. Investments in securities are subject to market risk.
+        </p>
       </div>
     </section>
   );

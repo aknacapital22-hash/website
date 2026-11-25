@@ -1,90 +1,59 @@
-import { motion, useReducedMotion } from "framer-motion";
-import { Sparkles, TrendingUp, ShieldCheck } from "lucide-react";
+import { motion } from "framer-motion";
+import { Sparkles, Scale, ShieldCheck } from "lucide-react";
 
 const points = [
   {
-    title: "Innovation",
-    tagline: "Algorithms",
-    description: "We believe in moving ahead of time, so we've built an in-house Quant Engine using 30+ smart algorithms that help us arrive at the right stock recommendations for our customers.",
+    title: "Reasoning, not just tips",
     icon: Sparkles,
+    description: "Every recommendation comes with the why. Our in-house Quant Engine, with 30+ algorithms, supports our analysts, so you can follow the logic instead of taking it on faith.",
   },
   {
-    title: "Growth & Scaling",
-    tagline: "Impact",
-    description: "We aspire to make a difference in the industry and investor community, becoming a driving force for positive change. Wealth creation becomes easy with us.",
-    icon: TrendingUp,
+    title: "Honest about risk",
+    icon: Scale,
+    description: "We tell you what can go wrong before you invest. No guaranteed returns, no hype. Markets carry risk, and good advice starts by saying so.",
   },
   {
-    title: "Realistic",
-    tagline: "Data-Driven",
-    description: "We are dedicated to always being honest, transparent, and ethical in everything we do. Even if you want to buy the data, we are the providers of clean and authentic data.",
+    title: "Regulated and transparent",
     icon: ShieldCheck,
+    description: "We are a SEBI Registered Research Analyst (INH000023515). Clear scope, clear fees, and a team you can speak to directly in Mumbai.",
   },
 ];
 
 export function FeaturedSections() {
-  const reduceMotion = useReducedMotion();
   return (
-    <section id="why-us" className="py-14 md:py-24 relative bg-background overflow-hidden section-lazy">
-
-      {/* Background orb — static when reduced motion or mobile */}
-      {reduceMotion ? (
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-      ) : (
+    <section id="why-us" className="relative overflow-hidden py-[clamp(3.5rem,8vw,6.5rem)] section-lazy">
+      <div className="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-primary/5 blur-[120px]" />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none"
-        />
-      )}
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-2xl mx-auto mb-14"
+          transition={{ duration: 0.6 }}
+          className="mx-auto mb-[clamp(2rem,5vw,3.5rem)] max-w-2xl text-center"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            Featured Sections
-          </span>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-foreground">
-            We Don't Just Offer Advisory —<br className="hidden sm:block" /> We Offer <span className="text-primary">Wealth Creation</span>
+          <h2 className="text-[clamp(1.75rem,3.5vw+0.5rem,3rem)] font-bold tracking-tight">
+            Why investors <span className="text-primary">stay with us</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Our value system: the foundation of our success.
-          </p>
+          <p className="mt-3 text-lg text-muted-foreground">Wealth creation is a long game. Trust is how you play it.</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {points.map((point, index) => {
-            const Icon = point.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.55, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="flex flex-col items-center text-center gap-4 group p-6 md:p-8 rounded-2xl bg-card border border-border/50 hover:border-primary/40 hover:shadow-lg transition-shadow duration-300 cursor-default"
-              >
-                <motion.div
-                  whileHover={{ rotate: [0, -10, 10, 0] }}
-                  transition={{ duration: 0.4 }}
-                  className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors"
-                >
-                  <Icon className="w-7 h-7 text-primary" />
-                </motion.div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground">{point.title}</h3>
-                  <p className="text-sm font-semibold text-primary mb-2">{point.tagline}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{point.description}</p>
-                </div>
-              </motion.div>
-            );
-          })}
+        <div className="grid gap-5 md:grid-cols-3">
+          {points.map((p, i) => (
+            <motion.div
+              key={p.title}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="rounded-3xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
+            >
+              <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <p.icon className="h-6 w-6" />
+              </span>
+              <h3 className="text-lg font-bold">{p.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

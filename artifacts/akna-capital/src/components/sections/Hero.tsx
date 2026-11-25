@@ -1,163 +1,88 @@
-import { motion } from "framer-motion";
-import { useState, useRef, useCallback, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "wouter";
-import { useCountUp } from "@/hooks/use-count-up";
+import { ArrowRight, BadgeCheck, Star, Cpu, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-function StatItem({ value, suffix, label }: { value: number; suffix: string; label: string }) {
-  const { count, ref } = useCountUp(value, 1600);
-  return (
-    <motion.div whileHover={{ scale: 1.07 }} className="text-center">
-      <p className="text-3xl md:text-4xl font-extrabold text-primary tabular-nums">
-        <span ref={ref}>{count}</span>{suffix}
-      </p>
-      <p className="text-sm text-muted-foreground mt-1 font-medium">{label}</p>
-    </motion.div>
-  );
-}
+const ease = [0.16, 1, 0.3, 1] as const;
+
+const trust = [
+  { icon: BadgeCheck, label: "SEBI Registered Research Analyst", sub: "INH000023515" },
+  { icon: Star, label: "4.6 rating", sub: "1,000+ reviews" },
+  { icon: Cpu, label: "30+ in-house algorithms", sub: "Quant Engine" },
+  { icon: MapPin, label: "Based in Mumbai", sub: "Malad" },
+];
 
 export function Hero() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [spotlight, setSpotlight] = useState({ x: 0, y: 0, active: false });
-  const [isTouch, setIsTouch] = useState(false);
-
-  useEffect(() => {
-    setIsTouch(window.matchMedia("(hover: none)").matches);
-  }, []);
-
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
-    if (isTouch) return;
-    const rect = sectionRef.current?.getBoundingClientRect();
-    if (!rect) return;
-    setSpotlight({ x: e.clientX - rect.left, y: e.clientY - rect.top, active: true });
-  }, [isTouch]);
-
-  const handleMouseLeave = useCallback(() => {
-    setSpotlight((s) => ({ ...s, active: false }));
-  }, []);
+  const reduce = useReducedMotion();
+  const fade = (delay: number) =>
+    reduce
+      ? {}
+      : { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.7, delay, ease } };
 
   return (
-    <section
-      ref={sectionRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="relative flex items-center justify-center overflow-hidden pt-28 pb-16 md:pt-32 md:pb-24 bg-background min-h-[90vh]"
-    >
-      {/* Mouse spotlight */}
-      <div
-        className="pointer-events-none absolute inset-0 z-20 transition-opacity duration-300"
-        style={{
-          opacity: spotlight.active ? 1 : 0,
-          background: `radial-gradient(700px circle at ${spotlight.x}px ${spotlight.y}px, rgba(20,184,166,0.12), transparent 70%)`,
-        }}
-      />
+    <section className="relative overflow-hidden bg-gradient-to-b from-primary/10 via-background to-background pt-[clamp(6.5rem,12vw,9rem)] pb-[clamp(3rem,7vw,6rem)]">
+      {/* Soft ambient glow */}
+      <div className="pointer-events-none absolute -top-24 left-1/2 h-[28rem] w-[60rem] max-w-none -translate-x-1/2 rounded-full bg-primary/15 blur-[120px]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#0f766e0d_1px,transparent_1px),linear-gradient(to_bottom,#0f766e0d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_55%_at_50%_0%,#000_60%,transparent_100%)]" />
 
-      {/* Ambient orbs — static on touch/mobile, animated on desktop */}
-      {isTouch ? (
-        <>
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/8 rounded-full blur-[120px] pointer-events-none" />
-        </>
-      ) : (
-        <>
-          <motion.div
-            animate={{ x: [0, 40, 0], y: [0, -30, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none"
-          />
-          <motion.div
-            animate={{ x: [0, -30, 0], y: [0, 40, 0] }}
-            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute bottom-20 right-10 w-96 h-96 bg-primary/8 rounded-full blur-[120px] pointer-events-none"
-          />
-        </>
-      )}
-
-      {/* Grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000008_1px,transparent_1px),linear-gradient(to_bottom,#00000008_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] z-10 pointer-events-none" />
-
-      <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-foreground max-w-5xl leading-[1.08]"
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+        <motion.span
+          {...fade(0)}
+          className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary"
         >
-          Making Wealth Creation
-          <br />
-          <span className="text-primary drop-shadow-sm">Easy &amp; Reliable</span>
+          <BadgeCheck className="h-4 w-4" /> SEBI Registered Research Analyst · INH000023515
+        </motion.span>
+
+        <motion.h1
+          {...fade(0.08)}
+          className="mt-6 max-w-5xl font-extrabold tracking-tight text-foreground leading-[1.06] text-[clamp(2.4rem,6.5vw+0.5rem,5.5rem)]"
+        >
+          Grow your wealth with <span className="text-primary">research you can trust</span>
         </motion.h1>
 
-        {/* Sub-tagline */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-4 md:mt-5 text-lg md:text-2xl font-semibold text-muted-foreground tracking-tight"
+          {...fade(0.18)}
+          className="mt-5 max-w-2xl text-[clamp(1rem,0.6vw+0.9rem,1.35rem)] text-muted-foreground leading-relaxed"
         >
-          Financial Planning. Equity Investing.{" "}
-          <span className="text-primary">Made Easy.</span>
+          Every recommendation comes with its reasoning, backed by fundamental, technical and quantitative models.
+          Clear plans for investors and families. Issuer-side advice for businesses heading to an IPO.
         </motion.p>
 
-        {/* Subtext */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-5 md:mt-6 text-base md:text-lg text-muted-foreground max-w-2xl font-light leading-relaxed px-2 md:px-0"
-        >
-          We grow wealth for individuals, families, and businesses by leveraging advanced fundamental, technical and quantitative models, data analytics, and AI to identify market opportunities and optimize investment strategies with unmatched precision and reliability.
+        <motion.div {...fade(0.28)} className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
+          <Link href="/contact">
+            <Button size="lg" className="h-14 w-full rounded-full px-8 text-base font-semibold shadow-lg shadow-primary/25 hover:-translate-y-0.5 transition-transform sm:w-auto group">
+              Book a free consultation
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
+          <a href="#find-your-path">
+            <Button size="lg" variant="outline" className="h-14 w-full rounded-full px-8 text-base bg-background/60 backdrop-blur-sm sm:w-auto">
+              Find my path
+            </Button>
+          </a>
+        </motion.div>
+
+        <motion.p {...fade(0.34)} className="mt-4 text-sm text-muted-foreground">
+          Free first call · No obligation · No lock-in to get started
         </motion.p>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-10 flex flex-col sm:flex-row gap-4"
+        {/* Trust strip */}
+        <motion.ul
+          {...fade(0.42)}
+          className="mt-[clamp(2.5rem,6vw,4.5rem)] grid w-full max-w-4xl grid-cols-2 gap-3 md:grid-cols-4"
         >
-          <Link href="/contact">
-            <Button
-              size="lg"
-              className="h-14 px-8 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg hover:-translate-y-1 transition-all duration-300 shadow-[0_4px_14px_rgba(212,143,37,0.3)] hover:shadow-[0_6px_20px_rgba(212,143,37,0.45)] group"
-            >
-              Create Portfolio
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
-          <Link href="/contact">
-            <Button
-              variant="outline"
-              size="lg"
-              className="h-14 px-8 rounded-full border-border bg-background/50 backdrop-blur-sm hover:bg-muted text-foreground font-medium text-lg hover:-translate-y-1 transition-all duration-300 shadow-sm"
-            >
-              Join Our Community
-            </Button>
-          </Link>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-12 md:mt-20 flex flex-row gap-6 sm:gap-12 md:gap-16 items-center justify-center flex-wrap"
-        >
-          <motion.div whileHover={{ scale: 1.07 }} className="text-center">
-            <p className="text-3xl md:text-4xl font-extrabold text-primary flex items-center justify-center gap-1">
-              4.6 <Star className="w-6 h-6 fill-primary text-primary" />
-            </p>
-            <p className="text-sm text-muted-foreground mt-1 font-medium">Rating, 1,000+ Reviews</p>
-          </motion.div>
-          <div className="hidden sm:block w-px h-10 bg-border/60" />
-          <StatItem value={30} suffix="+" label="Smart Algorithms" />
-          <div className="hidden sm:block w-px h-10 bg-border/60" />
-          <StatItem value={100} suffix="+" label="Happy Investors" />
-        </motion.div>
-
+          {trust.map((t) => (
+            <li key={t.label} className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card/80 px-4 py-3 text-left backdrop-blur-sm">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <t.icon className="h-4 w-4" />
+              </span>
+              <span className="leading-tight">
+                <span className="block text-sm font-semibold text-foreground">{t.label}</span>
+                <span className="block text-xs text-muted-foreground">{t.sub}</span>
+              </span>
+            </li>
+          ))}
+        </motion.ul>
       </div>
     </section>
   );
